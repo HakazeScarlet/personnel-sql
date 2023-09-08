@@ -68,7 +68,7 @@ CONSTRAINT id_pk PRIMARY KEY (id)
 CONSTRAINT personal_information_snils_id_fk FOREIGN KEY (snils_id_personal_information)
 	REFERENCES personnel.personal_information (snils_id)
 	ON UPDATE CASCADE ON DELETE,
-CONSTRAINT family_id_fk FOREIGN KEY (id_family)
+CONSTRAINT family_id_fk FOREIGN KEY (family_id)
 	REFERENCES personnel.family (id)
 	ON UPDATE CASCADE ON DELETE
 );
@@ -77,7 +77,7 @@ CREATE TABLE personnel.phone_number (
 id serial unique NOT NULL,
 phone_country_code character varying(5) NOT NULL,
 phone_number character varying(11) NOT NULL,
-number_type character varying(100) NOT NULL
+number_type character varying(100) NOT NULL,
 personal_information_snils_id integer NOT NULL,
 family_id integer NOT NULL,
 CONSTRAINT id_pk PRIMARY KEY (id)
@@ -132,7 +132,7 @@ CONSTRAINT id_pk PRIMARY KEY (id)
 CONSTRAINT personal_information_snils_id_fk FOREIGN KEY (snils_id_personal_information)
 	REFERENCES personnel.personal_information (snils_id)
 	ON UPDATE CASCADE ON DELETE,
-CONSTRAINT family_id_fk FOREIGN KEY (id_family)
+CONSTRAINT family_id_fk FOREIGN KEY (family_id)
 	REFERENCES personnel.family (id)
 	ON UPDATE CASCADE ON DELETE
 );
