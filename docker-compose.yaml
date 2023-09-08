@@ -1,0 +1,14 @@
+version: '3.3'
+
+services:
+  postgresql:
+    image: postgres
+    container_name: personnel
+    ports:
+      - 5436:5432
+    volumes: 
+      - ./personnel.sql:/docker-entrypoint-initdb.d/0_init.sql
+      - ./data/postgres:/var/lib/postgresql/data personnel
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=admin
