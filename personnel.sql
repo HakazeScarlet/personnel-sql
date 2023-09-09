@@ -18,8 +18,8 @@ patronymic character varying(100) NOT NULL,
 staff_position_id integer NOT NULL,
 CONSTRAINT personal_id_pk PRIMARY KEY (personal_id),
 CONSTRAINT staff_position_id_fk FOREIGN KEY (staff_position_id)
-	REFERENCES personnel.staff (position_id)
-	ON UPDATE CASCADE ON DELETE
+	REFERENCES personnel.staff (position_id) MATCH SIMPLE
+	ON UPDATE CASCADE ON DELETE RESTRICT
 );
 
 CREATE TABLE personnel.personal_information (
@@ -35,10 +35,10 @@ family_status character varying(100) NOT NULL,
 driver_licence character varying(10) NOT NULL,
 criminal_record boolean NOT NULL,
 personnel_department_personal_id integer NOT NULL,
-CONSTRAINT snils_id_pk PRIMARY KEY (snils_id)
-CONSTRAINT personnel_department_personal_id_fk FOREIGN KEY (personal_id_personnel_department)
+CONSTRAINT snils_id_pk PRIMARY KEY (snils_id),
+CONSTRAINT personnel_department_personal_id_fk FOREIGN KEY (personnel_department_personal_id)
 	REFERENCES personnel.personnel_department (personal_id)
-	ON UPDATE CASCADE ON DELETE
+	ON UPDATE CASCADE ON DELETE RESTRICT
 );
 
 CREATE TABLE personnel.family (
@@ -50,10 +50,10 @@ kinship character varying(100) NOT NULL,
 passport character varying(10) NOT NULL,
 birthday date NOT NULL,
 personal_information_snils_id integer NOT NULL,
-CONSTRAINT id_pk PRIMARY KEY (id)
-CONSTRAINT personal_information_snils_id_fk FOREIGN KEY (snils_id_personal_information)
+CONSTRAINT family_id_pk PRIMARY KEY (id),
+CONSTRAINT personal_information_snils_id_fk FOREIGN KEY (personal_information_snils_id)
 	REFERENCES personnel.personal_information (snils_id)
-	ON UPDATE CASCADE ON DELETE
+	ON UPDATE CASCADE ON DELETE RESTRICT
 );
 
 CREATE TABLE personnel.birth_location (
@@ -64,13 +64,13 @@ district character varying(100),
 locality character varying(100),
 personal_information_snils_id integer NOT NULL,
 family_id integer NOT NULL,
-CONSTRAINT id_pk PRIMARY KEY (id)
-CONSTRAINT personal_information_snils_id_fk FOREIGN KEY (snils_id_personal_information)
+CONSTRAINT birth_location_id_pk PRIMARY KEY (id),
+CONSTRAINT personal_information_snils_id_fk FOREIGN KEY (personal_information_snils_id)
 	REFERENCES personnel.personal_information (snils_id)
-	ON UPDATE CASCADE ON DELETE,
+	ON UPDATE CASCADE ON DELETE RESTRICT,
 CONSTRAINT family_id_fk FOREIGN KEY (family_id)
 	REFERENCES personnel.family (id)
-	ON UPDATE CASCADE ON DELETE
+	ON UPDATE CASCADE ON DELETE RESTRICT
 );
 
 CREATE TABLE personnel.phone_number (
@@ -80,13 +80,13 @@ phone_number character varying(11) NOT NULL,
 number_type character varying(100) NOT NULL,
 personal_information_snils_id integer NOT NULL,
 family_id integer NOT NULL,
-CONSTRAINT id_pk PRIMARY KEY (id)
-CONSTRAINT personal_information_snils_id_fk FOREIGN KEY (snils_id_personal_information)
+CONSTRAINT phone_number_id_pk PRIMARY KEY (id),
+CONSTRAINT personal_information_snils_id_fk FOREIGN KEY (personal_information_snils_id)
 	REFERENCES personnel.personal_information (snils_id)
-	ON UPDATE CASCADE ON DELETE 
-CONSTRAINT family_id_fk FOREIGN KEY (id_family)
+	ON UPDATE CASCADE ON DELETE RESTRICT,
+CONSTRAINT family_id_fk FOREIGN KEY (family_id)
 	REFERENCES personnel.family (id)
-	ON UPDATE CASCADE ON DELETE
+	ON UPDATE CASCADE ON DELETE RESTRICT
 );
 
 CREATE TABLE personnel.personal_vehicle (
@@ -96,10 +96,10 @@ car_number character varying(15) NOT NULL,
 car_registration_certificate character varying(10) NOT NULL,
 car_release_date date NOT NULL,
 personal_information_snils_id integer NOT NULL,
-CONSTRAINT id_pk PRIMARY KEY (id)
-CONSTRAINT personal_information_snils_id_fk FOREIGN KEY (snils_id_personal_information)
+CONSTRAINT personal_vehicle_id_pk PRIMARY KEY (id),
+CONSTRAINT personal_information_snils_id_fk FOREIGN KEY (personal_information_snils_id)
 	REFERENCES personnel.personal_information (snils_id)
-	ON UPDATE CASCADE ON DELETE
+	ON UPDATE CASCADE ON DELETE RESTRICT
 );
 
 CREATE TABLE personnel.education (
@@ -110,10 +110,10 @@ education_type character varying(50) NOT NULL,
 start_date date NOT NULL,
 graduation_date date NOT NULL,
 personal_information_snils_id integer NOT NULL,
-CONSTRAINT id_pk PRIMARY KEY (id)
-CONSTRAINT personal_information_snils_id_fk FOREIGN KEY (snils_id_personal_information)
+CONSTRAINT education_id_pk PRIMARY KEY (id),
+CONSTRAINT personal_information_snils_id_fk FOREIGN KEY (personal_information_snils_id)
 	REFERENCES personnel.personal_information (snils_id)
-	ON UPDATE CASCADE ON DELETE
+	ON UPDATE CASCADE ON DELETE RESTRICT
 );
 
 CREATE TABLE personnel.location (
@@ -128,11 +128,11 @@ block character varying(10),
 apartment integer,
 personal_information_snils_id integer NOT NULL,
 family_id integer NOT NULL,
-CONSTRAINT id_pk PRIMARY KEY (id)
-CONSTRAINT personal_information_snils_id_fk FOREIGN KEY (snils_id_personal_information)
+CONSTRAINT location_id_pk PRIMARY KEY (id),
+CONSTRAINT personal_information_snils_id_fk FOREIGN KEY (personal_information_snils_id)
 	REFERENCES personnel.personal_information (snils_id)
-	ON UPDATE CASCADE ON DELETE,
+	ON UPDATE CASCADE ON DELETE RESTRICT,
 CONSTRAINT family_id_fk FOREIGN KEY (family_id)
 	REFERENCES personnel.family (id)
-	ON UPDATE CASCADE ON DELETE
+	ON UPDATE CASCADE ON DELETE RESTRICT
 );

@@ -5,10 +5,10 @@ services:
     image: postgres
     container_name: personnel
     ports:
-      - 5436:5432
+      - "5436:5432"
     volumes: 
       - ./personnel.sql:/docker-entrypoint-initdb.d/0_init.sql
-      - ./data/postgres:/var/lib/postgresql/data-personnel
+      - ./data/postgres:/var/lib/postgresql/data-personnel 777
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=admin
