@@ -1,0 +1,20 @@
+INSERT INTO personnel.personal_information (
+snils_id,
+surname,
+name,
+patronymic,
+birthday,
+nationality,
+passport,
+military_identification,
+family_status,
+driver_licence,
+criminal_record,
+personnel_department_personal_id
+) VALUES
+
+(111222, 'Sitrov', 'Ivan', 'Ivanovich', '1986-11-07', 'russian', 3321100100, 454566363, 'married', 7512036412, 'NO', 11111),
+(222333, 'Proshlov', 'Alex', 'Sidorovich', '1953-07-12', 'russian', 8686222333, 397535421, 'single', 4210397451, 'NO', 22222),
+(333444, 'Novii', 'God', 'Felixovich', '1991-03-08', 'russian', 5454867952, 212475986, 'married', 1024501236, 'NO', 33333),
+(444555, 'Godnii', 'Pavel', 'Sergeevich', '1996-12-01', 'russian', 9779465321, 820136520, 'married', 1023974562, 'NO', 44444),
+(666666, 'Rezkov', 'Denis', 'Olegovich', '1983-08-09', 'russian', 4562312213, 301203678, 'divorced', 4210567419, 'NO', 55555);

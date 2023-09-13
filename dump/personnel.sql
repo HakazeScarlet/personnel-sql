@@ -42,7 +42,7 @@ CONSTRAINT personnel_department_personal_id_fk FOREIGN KEY (personnel_department
 );
 
 CREATE TABLE personnel.family (
-id serial unique NOT NULL,
+id serial UNIQUE NOT NULL,
 surname character varying(100) NOT NULL,
 name character varying(100) NOT NULL,
 patronymic character varying(100) NOT NULL,
@@ -57,7 +57,7 @@ CONSTRAINT personal_information_snils_id_fk FOREIGN KEY (personal_information_sn
 );
 
 CREATE TABLE personnel.birth_location (
-id serial unique NOT NULL,
+id serial UNIQUE NOT NULL,
 country character varying(100),
 subject character varying(100),
 district character varying(100),
@@ -74,7 +74,7 @@ CONSTRAINT family_id_fk FOREIGN KEY (family_id)
 );
 
 CREATE TABLE personnel.phone_number (
-id serial unique NOT NULL,
+id serial UNIQUE NOT NULL,
 phone_country_code character varying(5) NOT NULL,
 phone_number character varying(11) NOT NULL,
 number_type character varying(100) NOT NULL,
@@ -90,7 +90,7 @@ CONSTRAINT family_id_fk FOREIGN KEY (family_id)
 );
 
 CREATE TABLE personnel.personal_vehicle (
-id serial unique NOT NULL,
+id serial UNIQUE NOT NULL,
 car_brand character varying(100) NOT NULL,
 car_number character varying(15) NOT NULL,
 car_registration_certificate character varying(10) NOT NULL,
@@ -103,7 +103,7 @@ CONSTRAINT personal_information_snils_id_fk FOREIGN KEY (personal_information_sn
 );
 
 CREATE TABLE personnel.education (
-id serial unique NOT NULL,
+id serial UNIQUE NOT NULL,
 institution_name character varying(200) NOT NULL,
 institution_type character varying(100) NOT NULL,
 education_type character varying(50) NOT NULL,
@@ -117,7 +117,7 @@ CONSTRAINT personal_information_snils_id_fk FOREIGN KEY (personal_information_sn
 );
 
 CREATE TABLE personnel.location (
-id serial unique NOT NULL,
+id serial UNIQUE NOT NULL,
 country character varying(100),
 subject character varying(100),
 district character varying(100),
@@ -136,3 +136,13 @@ CONSTRAINT family_id_fk FOREIGN KEY (family_id)
 	REFERENCES personnel.family (id)
 	ON UPDATE CASCADE ON DELETE RESTRICT
 );
+
+\i /docker-entrypoint-initdb.d/load_staff.dump;
+\i /docker-entrypoint-initdb.d/load_personnel_department.dump;
+\i /docker-entrypoint-initdb.d/load_personal_information.dump;
+-- \i /docker-entrypoint-initdb.d/load_family.dump;
+-- \i /docker-entrypoint-initdb.d/load_birth_location.dump;
+-- \i /docker-entrypoint-initdb.d/load_phone_number.dump;
+-- \i /docker-entrypoint-initdb.d/load_personal_vehicle.dump;
+-- \i /docker-entrypoint-initdb.d/load_education.dump;
+-- \i /docker-entrypoint-initdb.d/load_location.dump;

@@ -3,11 +3,11 @@ version: '3.3'
 services:
   postgresql:
     image: postgres
-    container_name: personnel
+    container_name: staff
     ports:
       - "5436:5432"
     volumes: 
-      - ./personnel.sql:/docker-entrypoint-initdb.d/0_init.sql
+      - ./dump:/docker-entrypoint-initdb.d
       - ./data/postgres:/var/lib/postgresql/data-personnel 777
     environment:
       - POSTGRES_USER=postgres
