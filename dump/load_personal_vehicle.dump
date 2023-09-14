@@ -1,1 +1,11 @@
-INSERT INTO personnel.personal_vehicle () VALUES
+INSERT INTO personnel.personal_vehicle (
+car_brand,
+car_number,
+car_registration_certificate,
+car_release_date,
+personal_information_snils_id
+) VALUES
+
+('LADA', 'N242ON45RUS', 4335610427, '2012-07-23', 222333),
+('renault', 'O444XX43RUS', 2401326107, '2022-12-21', 333444),
+('toyota', 'B234BG86RUS', 9730214579, '2020-11-15', 444555);

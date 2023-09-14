@@ -1,1 +1,18 @@
-INSERT INTO personnel.location () VALUES
+INSERT INTO personnel.location (
+country,
+subject,
+district,
+locality,
+street,
+house,
+block,
+apartment,
+personal_information_snils_id,
+family_id
+) VALUES
+
+('russia', 'moscow region', NULL, 'moscow', 'mira', 23, NULL, 101, 111222, NULL),
+('russia', 'moscow region', NULL, 'moscow', 'pobedi', 54, NULL, 12, 222333, NULL),
+('russia', 'moscow region', NULL, 'moscow', 'sovetskaya', 13, 'a', 79, 333444, NULL),
+('russia', 'moscow region', NULL, 'moscow', 'moscowskaya', 10, 'b', 7, 666666, NULL),
+('russia', 'moscow region', NULL, 'moscow', 'moscowskaya', 10, 'b', 7, NULL, 5);

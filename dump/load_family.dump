@@ -1,1 +1,15 @@
-INSERT INTO personnel.family () VALUES
+INSERT INTO personnel.family (
+surname,
+name,
+patronymic,
+kinship,
+passport,
+birthday,
+personal_information_snils_id
+) VALUES
+
+('Sitrova', 'Vladislava', 'Sergeevna', 'mother', 0321951234, '1960-05-30', 111222),
+('Sitrov', 'Petr', 'Ivanovich', 'son', 6894463297, '2000-12-31', 111222),
+('Sitrova', 'Antonina', 'Vladimirovna', 'wife', 5632784125, '1985-10-25', 111222),
+('Godnaya', 'Miroslava', 'Stepanovna', 'wife', 4568329741, '1990-03-22', 444555),
+('Rezkov', 'Anton', 'Denisovich', 'son', 6428614356, '2006-07-17', 666666);

@@ -5,6 +5,7 @@ name,
 patronymic,
 staff_position_id
 ) VALUES
+
 (11111, 'Sitrov', 'Ivan', 'Ivanovich', 1),
 (22222, 'Proshlov', 'Alex', 'Sidorovich', 2),
 (33333, 'Novii', 'God', 'Felixovich', 3),
