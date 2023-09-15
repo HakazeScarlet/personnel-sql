@@ -1,10 +1,7 @@
-INSERT INTO personnel.staff (
-position_id,
-position
-) VALUES
-
-(1, 'commander chief'),
-(2, 'commander chief supp'),
-(3, 'commander'),
-(4, 'commander helper'),
-(5, 'ultimate chief');
+INSERT INTO personnel.staff(position_id, position)
+VALUES
+    (1, 'commander chief'),
+    (2, 'commander chief supp'),
+    (3, 'commander'),
+    (4, 'commander helper'),
+    (5, 'ultimate chief');

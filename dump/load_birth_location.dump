@@ -1,14 +1,7 @@
-INSERT INTO personnel.birth_location (
-country,
-subject,
-district,
-locality,
-personal_information_snils_id,
-family_id
-) VALUES
-
-('russia', 'moscow region', NULL, 'moscow', 111222, NULL),
-('russia', 'kaluga region', 'borovsky', 'obninsk', 222333, NULL),
-('russia', 'samara region', 'syzran', 'togliatty', NULL, 3),
-('russia', 'tver region', NULL, 'tver', 444555, NULL),
-('russia', 'ryazan region', NULL, 'ryazan', NULL, 5);
+INSERT INTO personnel.birth_location(country, subject, district, locality, personal_information_snils_id, family_id)
+VALUES
+    ('russia', 'moscow region', NULL, 'moscow', 111222, NULL),
+    ('russia', 'kaluga region', 'borovsky', 'obninsk', 222333, NULL),
+    ('russia', 'samara region', 'syzran', 'togliatty', NULL, 3),
+    ('russia', 'tver region', NULL, 'tver', 444555, NULL),
+    ('russia', 'ryazan region', NULL, 'ryazan', NULL, 5);

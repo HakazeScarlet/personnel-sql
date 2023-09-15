@@ -1,14 +1,8 @@
-INSERT INTO personnel.education (
-institution_name,
-institution_type,
-education_type,
-start_date,
-graduation_date,
-personal_information_snils_id
-) VALUES
-
-('Immanuel Kant Baltic Federal University', 'University', 'higher', '2000-09-01', '2006-06-24', 111222),
-('Far Eastern Federal University', 'University', 'higher', '2003-09-01', '2007-06-20', 222333),
-('Kazan Federal University', 'University', 'higher', '1998-08-30', '2004-07-03', 333444),
-('National Research Tomsk State University', 'University', 'higher', '2014-08-31', '2020-06-30', 444555),
-('Peoples Friendship University of Russia', 'University', 'higher', '2010-09-01', '2015-07-01', 666666);
+INSERT INTO
+    personnel.education(institution_name, institution_type, education_type, start_date, graduation_date, personal_information_snils_id)
+VALUES
+    ('Immanuel Kant Baltic Federal University', 'University', 'higher', '2000-09-01', '2006-06-24', 111222),
+    ('Far Eastern Federal University', 'University', 'higher', '2003-09-01', '2007-06-20', 222333),
+    ('Kazan Federal University', 'University', 'higher', '1998-08-30', '2004-07-03', 333444),
+    ('National Research Tomsk State University', 'University', 'higher', '2014-08-31', '2020-06-30', 444555),
+    ('Peoples Friendship University of Russia', 'University', 'higher', '2010-09-01', '2015-07-01', 666666);
