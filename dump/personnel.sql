@@ -5,7 +5,7 @@ CREATE DATABASE personnel;
 CREATE SCHEMA personnel;
 
 CREATE TABLE personnel.staff (
-    position_id integer NOT NULL,
+    position_id smallint NOT NULL,
     position character varying(100) NOT NULL,
     CONSTRAINT position_id_pk PRIMARY KEY (position_id)
 );
@@ -15,7 +15,7 @@ CREATE TABLE personnel.personnel_department (
     surname character varying(100) NOT NULL,
     name character varying(100) NOT NULL,
     patronymic character varying(100) NOT NULL,
-    staff_position_id integer NOT NULL,
+    staff_position_id smallint NOT NULL,
     CONSTRAINT personal_id_pk PRIMARY KEY (personal_id),
     CONSTRAINT staff_position_id_fk FOREIGN KEY (staff_position_id)
     	REFERENCES personnel.staff (position_id)
@@ -31,7 +31,7 @@ CREATE TABLE personnel.personal_information (
     nationality character varying(100) NOT NULL,
     passport character varying(10) NOT NULL,
     military_identification character varying(9) NOT NULL,
-    family_status character varying(100) NOT NULL,
+    family_status character varying(20) NOT NULL,
     driver_licence character varying(10) NOT NULL,
     criminal_record boolean NOT NULL,
     personnel_department_personal_id integer NOT NULL,
@@ -46,7 +46,7 @@ CREATE TABLE personnel.family (
     surname character varying(100) NOT NULL,
     name character varying(100) NOT NULL,
     patronymic character varying(100) NOT NULL,
-    kinship character varying(100) NOT NULL,
+    kinship character varying(20) NOT NULL,
     passport character varying(10) NOT NULL,
     birthday date NOT NULL,
     personal_information_snils_id integer NOT NULL,
@@ -58,12 +58,12 @@ CREATE TABLE personnel.family (
 
 CREATE TABLE personnel.birth_location (
     id smallserial UNIQUE NOT NULL,
-    country character varying(100),
+    country character varying(50),
     subject character varying(100),
     district character varying(100),
     locality character varying(100),
     personal_information_snils_id integer,
-    family_id integer,
+    family_id smallint,
     CONSTRAINT birth_location_id_pk PRIMARY KEY (id),
     CONSTRAINT personal_information_snils_id_fk FOREIGN KEY (personal_information_snils_id)
     	REFERENCES personnel.personal_information (snils_id)
@@ -79,7 +79,7 @@ CREATE TABLE personnel.phone_number (
     number bigint NOT NULL,
     number_type character varying(100) NOT NULL,
     personal_information_snils_id integer,
-    family_id integer,
+    family_id smallint,
     CONSTRAINT phone_number_id_pk PRIMARY KEY (id),
     CONSTRAINT personal_information_snils_id_fk FOREIGN KEY (personal_information_snils_id)
     	REFERENCES personnel.personal_information (snils_id)
@@ -118,16 +118,16 @@ CREATE TABLE personnel.education (
 
 CREATE TABLE personnel.location (
     id smallserial UNIQUE NOT NULL,
-    country character varying(100),
+    country character varying(50),
     subject character varying(100),
     district character varying(100),
     locality text,
     street text,
-    house integer,
-    block character varying(10),
+    house smallint,
+    block character varying(5),
     apartment integer,
     personal_information_snils_id integer,
-    family_id integer,
+    family_id smallint,
     CONSTRAINT location_id_pk PRIMARY KEY (id),
     CONSTRAINT personal_information_snils_id_fk FOREIGN KEY (personal_information_snils_id)
     	REFERENCES personnel.personal_information (snils_id)
