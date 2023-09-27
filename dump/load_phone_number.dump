@@ -1,7 +1,10 @@
 INSERT INTO personnel.phone_number(country_code, number, number_type, personal_information_snils_id, family_id)
 VALUES
-    ('+7', 6452743259, 'home number', 111222, NULL),
-    ('+7', 4326795431, 'work number', 333444, NULL),
-    ('+7', 2149567345, 'personal number', NULL, 3),
-    ('+7', 1249537645, 'work number', 444555, NULL),
-    ('+7', 9563421573, 'personal number', 666666, NULL);
+    ('+7', 6452743259, 'home', 111222, NULL),
+    ('+7', 4326722431, 'work', 333444, NULL),
+    ('+7', 4326795431, 'personal', 333444, NULL),
+    ('+7', 2149567345, 'personal', NULL, 3),
+    ('+7', 2111167345, 'personal', NULL, 1),
+    ('+7', 2149555345, 'work', NULL, 3),
+    ('+7', 1249537645, 'work', 444555, NULL),
+    ('+7', 9563421573, 'personal', 666666, NULL);

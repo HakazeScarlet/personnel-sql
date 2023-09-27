@@ -1,5 +1,10 @@
 INSERT INTO personnel.personal_vehicle(brand, number, registration_certificate, release_date, personal_information_snils_id)
 VALUES
     ('LADA', 'N242ON45RUS', 4335610427, '2012-07-23', 222333),
-    ('renault', 'O444XX43RUS', 2401326107, '2022-12-21', 333444),
+    ('maybach', 'O666TX66RUS', 5411626107, '2016-09-21', 888888),
+    ('renault', 'O444XX43RUS', 2401326107, '2022-12-20', 333444),
+    ('mercedes', 'O556XX46RUS', 3401326107, '2021-11-15', 333444),
+    ('mazda', 'O666XB66RUS', 5411326107, '2016-09-21', 333444),
+    ('mercury', 'O666RX66RUS', 5411426107, '2016-09-21', 666666),
+    ('opel', 'O666XX99RUS', 5411316107, '2016-09-21', 111222),
     ('toyota', 'B234BG86RUS', 9730214579, '2020-11-15', 444555);
