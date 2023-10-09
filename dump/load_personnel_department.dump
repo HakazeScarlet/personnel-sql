@@ -2,6 +2,17 @@ INSERT INTO personnel.personnel_department(personal_id, surname, name, patronymi
 VALUES
     (11111, 'Sitrov', 'Ivan', 'Ivanovich', 1),
     (22222, 'Proshlov', 'Alex', 'Sidorovich', 2),
-    (33333, 'Novii', 'God', 'Felixovich', 3),
+    (33333, 'Novii', 'Andrew', 'Felixovich', 3),
     (44444, 'Godnii', 'Pavel', 'Sergeevich', 4),
-    (55555, 'Rezkov', 'Denis', 'Olegovich', 5);
+    (55555, 'Paladen', 'Oleh', 'Viktorovich', 2),
+    (66666, 'Bogomir', 'Alex', 'Nickolaevich', 3),
+    (77777, 'Evans', 'Alex', 'Pavlovich', 5),
+    (88888, 'Sinchenko', 'Dmitriy', 'Sergeevich', 4),
+    (99999, 'Golovko', 'Andrew', 'Ivanovich', 1),
+    (21212, 'Aksenov', 'Vlad', 'Pavlovich', 2),
+    (34343, 'Tarev', 'Michael', 'Olegovich', 5),
+    (56565, 'Pliashenov', 'Pavel', 'Sidorovich', 4),
+    (71717, 'Novitskii', 'Victor', 'Ivanovich', 1),
+    (82828, 'Godnii', 'Sergey', 'Pavlovich', 1),
+    (49494, 'Godnii', 'Nickolay', 'Ivanovich', 4),
+    (30303, 'Rezkov', 'Denis', 'Olegovich', 5);

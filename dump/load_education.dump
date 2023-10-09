@@ -1,7 +1,8 @@
 INSERT INTO
     personnel.education(institution_name, institution_type, education_type, start_date, graduation_date, personal_information_snils_id)
 VALUES
-    ('Immanuel Kant Baltic Federal University', 'University', 'higher', '2000-09-01', '2006-06-24', 111222),
+    ('Immanuel Kant Baltic Federal University', 'University', 'higher', '2005-09-01', '2010-06-24', 111222),
+    ('Forssan ammatti-instituutti', 'college', 'average professional level', '2000-09-01', '2004-05-24', 111222),
     ('Far Eastern Federal University', 'University', 'higher', '2003-09-01', '2007-06-20', 222333),
     ('Kazan Federal University', 'University', 'higher', '1998-08-30', '2004-07-03', 333444),
     ('National Research Tomsk State University', 'University', 'higher', '2014-08-31', '2020-06-30', 444555),
